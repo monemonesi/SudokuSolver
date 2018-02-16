@@ -41,8 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\SudokuBlock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\ISudokuStrategy.cs" />
+    <Compile Include="Strategies\NakedPairsStrategy.cs" />
+    <Compile Include="Strategies\StrategyMarkUp.cs" />
+    <Compile Include="Strategies\SudokuSolverEngine.cs" />
+    <Compile Include="Workers\SudokuBlockFinder.cs" />
+    <Compile Include="Workers\SudokuBoardStateManager.cs" />
+    <Compile Include="Workers\SudokuDisplayer.cs" />
+    <Compile Include="Workers\SudokuFileReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
