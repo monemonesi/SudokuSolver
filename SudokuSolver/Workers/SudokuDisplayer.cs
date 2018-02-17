@@ -8,7 +8,7 @@ namespace SudokuSolver.Workers
 {
     class SudokuDisplayer
     {
-        public void display(string title, int[,] sudokuBoard)
+        public void Display(string title, int[,] sudokuBoard)
         {
             if (!title.Equals(string.Empty))
             {

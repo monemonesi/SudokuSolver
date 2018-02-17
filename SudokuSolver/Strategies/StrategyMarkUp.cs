@@ -41,8 +41,8 @@ namespace SudokuSolver.Strategies
             for (int row = 0; row < 9; row++) if (isAlreadyValid(sudokuBoard[row, givenCol])) possibilities[sudokuBoard[row, givenCol] - 1] = 0;
             for (int col = 0; col < 9; col++) if (isAlreadyValid(sudokuBoard[givenRow, col])) possibilities[sudokuBoard[givenRow, col] - 1] = 0;
 
-            return Convert.ToInt16(String.Join(string.Empty, from p in possibilities where p!=0 select p) );
-            //return Convert.ToInt16(String.Join(String.Empty,possibilities.Select(p => p).Where(p => p!=0)));
+            return Convert.ToInt32(String.Join(string.Empty, from p in possibilities where p!=0 select p) );
+            //return Convert.ToInt32(String.Join(String.Empty,possibilities.Select(p => p).Where(p => p!=0)));
         }
 
         private int GetPossibilitiesInBlock(int[,] sudokuBoard, int givenRow, int givenCol)
@@ -58,8 +58,8 @@ namespace SudokuSolver.Strategies
                 }
 
             }//End cells checker
-            return Convert.ToInt16(String.Join(string.Empty, from p in possibilities where p != 0 select p));
-            //return Convert.ToInt16(String.Join(String.Empty,possibilities.Select(p => p).Where(p => p!=0)));
+            return Convert.ToInt32(String.Join(string.Empty, from p in possibilities where p != 0 select p));
+            //return Convert.ToInt32(String.Join(String.Empty,possibilities.Select(p => p).Where(p => p!=0)));
         }
 
         private int GetPossibilitiesIntersection(int possibilitiesInRowCol, int possibilitiesInBlock)
@@ -69,7 +69,7 @@ namespace SudokuSolver.Strategies
 
             var possibilitiesIntersections = possibilitiesInRowColToCharArray.Intersect(possibilitiesInBlockToCharArray);
 
-            return Convert.ToInt16(String.Join(string.Empty, possibilitiesIntersections));
+            return Convert.ToInt32(String.Join(string.Empty, possibilitiesIntersections));
         }
 
         private bool isAlreadyValid(int cell)
