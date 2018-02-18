@@ -11,10 +11,8 @@ namespace SudokuSolver.Strategies
     {
         private readonly SudokuBlockFinder _sudokuBlockFinder;
 
-        public NakedPairsStrategy(SudokuBlockFinder sudokuBlockFinder)
-        {
-            _sudokuBlockFinder = sudokuBlockFinder;
-        }
+        public NakedPairsStrategy(SudokuBlockFinder sudokuBlockFinder) => _sudokuBlockFinder = sudokuBlockFinder;
+
 
         public int[,] Solve(int[,] sudokuBoard)
         {
@@ -127,9 +125,7 @@ namespace SudokuSolver.Strategies
             return false;
         }
 
-        private bool IsNakedPair(int firstPair, int secondPair)
-        {
-            return firstPair.ToString().Length == 2 && firstPair.Equals(secondPair);
-        }
+        private bool IsNakedPair(int firstPair, int secondPair) => firstPair.ToString().Length == 2 && firstPair.Equals(secondPair);
+
     }
 }

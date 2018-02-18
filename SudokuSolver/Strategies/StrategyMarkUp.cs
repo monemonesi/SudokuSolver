@@ -11,10 +11,8 @@ namespace SudokuSolver.Strategies
     {
         private readonly SudokuBlockFinder _sudokuBlockFinder;
 
-        public StrategyMarkUp(SudokuBlockFinder sudokuBlockFinder)
-        {
-            _sudokuBlockFinder = sudokuBlockFinder;
-        }
+        public StrategyMarkUp(SudokuBlockFinder sudokuBlockFinder) => _sudokuBlockFinder = sudokuBlockFinder;
+
 
         public int[,] Solve(int[,] sudokuBoard)
         {
@@ -72,9 +70,7 @@ namespace SudokuSolver.Strategies
             return Convert.ToInt32(String.Join(string.Empty, possibilitiesIntersections));
         }
 
-        private bool isAlreadyValid(int cell)
-        {
-            return cell != 0 && cell.ToString().Length == 1;
-        }
+        private bool isAlreadyValid(int cell) => cell != 0 && cell.ToString().Length == 1;
+
     }
 }
